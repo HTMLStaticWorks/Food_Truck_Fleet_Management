@@ -23,14 +23,10 @@
     <line x1="40" y1="20" x2="46" y2="24" stroke="#FF8C61" stroke-width="1"/>
     
     <!-- Front wheel -->
-    <circle cx="24" cy="28" r="4" fill="#2A2D34"/>
-    <circle cx="24" cy="28" r="2.5" fill="#3E4149"/>
-    <circle cx="24" cy="28" r="1.5" fill="#FF6B35"/>
+    <circle cx="24" cy="28" r="4" fill="#FF6B35"/>
     
     <!-- Back wheel -->
-    <circle cx="44" cy="28" r="4" fill="#2A2D34"/>
-    <circle cx="44" cy="28" r="2.5" fill="#3E4149"/>
-    <circle cx="44" cy="28" r="1.5" fill="#FF6B35"/>
+    <circle cx="44" cy="28" r="4" fill="#FF6B35"/>
     
     <!-- Undercarriage -->
     <rect x="20" y="26" width="28" height="1" fill="#2A2D34" opacity="0.3"/>
