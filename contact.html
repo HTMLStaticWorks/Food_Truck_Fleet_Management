@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,12 +13,19 @@
             grid-template-columns: 1.5fr 1fr;
             gap: 48px;
         }
+
         @media (max-width: 768px) {
-            .contact-container { grid-template-columns: 1fr; }
-            .contact-container > div { text-align: center; }
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container>div {
+                text-align: center;
+            }
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar">
         <div class="container nav-container">
@@ -30,24 +38,43 @@
                 <li><a href="contact.html" class="nav-link active">Contact</a></li>
                 <li><a href="overview.html" class="nav-link dashboard-link">Dashboard</a></li>
             </ul>
-            <div class="nav-controls">
-                <button class="icon-btn rtl-toggle-btn"><i class="fa-solid fa-globe"></i></button>
-                <button class="icon-btn theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
-                <a href="login.html" class="btn btn-primary">Login</a>
+            <div class="nav-right">
+                <div class="nav-controls">
+                    <button class="icon-btn rtl-toggle-btn"><i class="fa-solid fa-globe"></i></button>
+                    <button class="icon-btn theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
+                    <a href="login.html" class="btn btn-primary">Login</a>
+                </div>
+                <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
             </div>
-            <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
         </div>
     </nav>
 
-    <section class="hero" style="height: 40vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1600') center/cover;">
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay"></div>
+    <div class="mobile-menu">
+        <button class="mobile-close"><i class="fa-solid fa-xmark"></i></button>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 20px;">
+            <li><a href="index.html" class="nav-link text-dark" style="font-size: 1.2rem;">Home</a></li>
+            <li><a href="home2.html" class="nav-link" style="font-size: 1.2rem;">Home 2</a></li>
+            <li><a href="services.html" class="nav-link" style="font-size: 1.2rem;">Services</a></li>
+            <li><a href="blog.html" class="nav-link" style="font-size: 1.2rem;">Blog</a></li>
+            <li><a href="contact.html" class="nav-link active" style="font-size: 1.2rem;">Contact</a></li>
+            <li><a href="overview.html" class="nav-link dashboard-link" style="font-size: 1.2rem;">Dashboard</a></li>
+            <li><a href="login.html" class="btn btn-primary" style="text-align: center;">Login</a></li>
+        </ul>
+    </div>
+
+    <section class="hero"
+        style="height: 40vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1600') center/cover;">
         <h1>Get in Touch</h1>
     </section>
 
     <section>
         <div class="container">
             <div class="contact-container">
+                <!-- Left: Contact Form -->
                 <div>
-                    <h2 class="section-heading" style="text-align: left;">Send a Message</h2>
+                    <h2 class="section-heading" style="text-align: center;">Send a Message</h2>
                     <form style="display: flex; flex-direction: column; gap: 20px;">
                         <input type="text" placeholder="Full Name" required>
                         <input type="email" placeholder="Email Address" required>
@@ -56,55 +83,118 @@
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
                 </div>
+
+                <!-- Right: Contact Info -->
                 <div>
-                    <h2 class="section-heading" style="text-align: left;">Contact Info</h2>
-                    <div style="display: flex; flex-direction: column; gap: 32px; margin-top: 32px;">
-                        <div style="display: flex; gap: 16px; align-items: start;">
-                            <i class="fa-solid fa-location-dot" style="color: var(--primary); font-size: 1.5rem;"></i>
-                            <div>
-                                <h4>Headquarters</h4>
-                                <p>123 Street Food Ave, Urban City, NY 10001</p>
-                            </div>
+                    <h2 class="section-heading" style="text-align: center;">Contact Info</h2>
+
+                    <!-- Contact Details Card -->
+                    <div style="display: flex; flex-direction: column; gap: 28px; margin-top: 32px;">
+                        <div style="text-align: center;">
+                            <i class="fa-solid fa-phone"
+                                style="color: var(--primary); font-size: 1.5rem; margin-bottom: 12px; display: block;"></i>
+                            <h4 style="color: var(--text-dark); margin-bottom: 4px;">Call Us</h4>
+                            <p style="color: var(--text-light);">+1 (555) TRUCK-BITE</p>
                         </div>
-                        <div style="display: flex; gap: 16px; align-items: start;">
-                            <i class="fa-solid fa-phone" style="color: var(--primary); font-size: 1.5rem;"></i>
-                            <div>
-                                <h4>Call Us</h4>
-                                <p>+1 (555) TRUCK-BITE</p>
-                            </div>
+                        <div style="text-align: center;">
+                            <i class="fa-solid fa-envelope"
+                                style="color: var(--primary); font-size: 1.5rem; margin-bottom: 12px; display: block;"></i>
+                            <h4 style="color: var(--text-dark); margin-bottom: 4px;">Email Us</h4>
+                            <p style="color: var(--text-light);">hello@truckbite.com</p>
                         </div>
-                        <div style="display: flex; gap: 16px; align-items: start;">
-                            <i class="fa-solid fa-envelope" style="color: var(--primary); font-size: 1.5rem;"></i>
-                            <div>
-                                <h4>Email Us</h4>
-                                <p>hello@truckbite.com</p>
-                            </div>
+                        <div style="text-align: center;">
+                            <i class="fa-solid fa-clock"
+                                style="color: var(--primary); font-size: 1.5rem; margin-bottom: 12px; display: block;"></i>
+                            <h4 style="color: var(--text-dark); margin-bottom: 4px;">Office Hours</h4>
+                            <p style="color: var(--text-light);">Mon - Fri: 9:00 AM - 6:00 PM</p>
                         </div>
-                        <div style="display: flex; gap: 16px; align-items: start;">
-                            <i class="fa-solid fa-clock" style="color: var(--primary); font-size: 1.5rem;"></i>
-                            <div>
-                                <h4>Office Hours</h4>
-                                <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
-                            </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div style="height: 1px; background: var(--border-color); margin: 20px 0;"></div>
+
+                    <!-- Social Icons -->
+                    <div style="text-align: center;">
+                        <h4 style="color: var(--text-dark); margin-bottom: 16px;">Follow Us</h4>
+                        <div style="display: flex; gap: 12px; justify-content: center;">
+                            <a href="#"
+                                style="width: 44px; height: 44px; border-radius: 50%; background: var(--primary); color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.3s ease;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#"
+                                style="width: 44px; height: 44px; border-radius: 50%; background: var(--primary); color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.3s ease;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="#"
+                                style="width: 44px; height: 44px; border-radius: 50%; background: var(--primary); color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.3s ease;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                            <a href="#"
+                                style="width: 44px; height: 44px; border-radius: 50%; background: var(--primary); color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.3s ease;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="#"
+                                style="width: 44px; height: 44px; border-radius: 50%; background: var(--primary); color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.3s ease;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
+
+
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col"><h4>TruckBite</h4><p>Premium Fleet Management</p></div>
-                <div class="footer-col"><h4>Links</h4><a href="index.html">Home</a><a href="contact.html">Contact</a></div>
-                <div class="footer-col"><h4>Social</h4><a href="#">Insta</a></div>
-                <div class="footer-col"><h4>Newletter</h4><button class="btn btn-primary">Join</button></div>
+                <div class="footer-col">
+                    <h4
+                        style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-truck-fast"></i> TruckBite
+                    </h4>
+                    <p>Elevating street food with real-time tracking, premium catering, and unforgettable flavors.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Get updates on truck locations and new menus.</p>
+                    <div style="display: flex; gap: 8px; margin-top: 16px;">
+                        <input type="email" placeholder="Your email"
+                            style="background:#1A1D23; border-color:#3E4149; color:#FFF;">
+                        <button class="btn btn-primary" style="padding: 12px;"><i
+                                class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
             </div>
-            <div class="footer-bottom">&copy; 2026 TruckBite</div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TruckBite Fleet Management. All rights reserved.</p>
+            </div>
         </div>
     </footer>
     <script src="js/rtl-toggle.js"></script>
     <script src="js/script.js"></script>
 </body>
-</html>
 
+</html>

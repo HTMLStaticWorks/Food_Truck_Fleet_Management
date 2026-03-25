@@ -1,11 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Check Auth - Redirect if not logged in
-    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    if (!isLoggedIn) {
-        alert('Please login to access the dashboard.');
-        window.location.href = '../login.html';
-        return;
-    }
+
 
     // Sidebar Toggle for Mobile
     const sidebarToggle = document.getElementById('sidebar-toggle');

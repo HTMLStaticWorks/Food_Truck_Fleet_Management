@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,10 +15,24 @@
             padding-top: 80px;
             background: var(--bg-color);
         }
-        .hero-2-text { flex: 1; padding: 40px; }
-        .hero-2-image { flex: 1; height: 100%; position: relative; }
-        .hero-2-image img { width: 100%; height: 100%; object-fit: cover; }
-        
+
+        .hero-2-text {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .hero-2-image {
+            flex: 1;
+            height: 100%;
+            position: relative;
+        }
+
+        .hero-2-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .typing-container {
             font-size: 3.5rem;
             font-family: var(--font-heading);
@@ -29,32 +44,44 @@
             animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
         }
 
-        @keyframes typing { from { width: 0 } to { width: 100% } }
-        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--primary); } }
+        @keyframes typing {
+            from {
+                width: 0
+            }
 
-        .truck-scroll {
-            display: flex;
-            overflow-x: auto;
-            gap: 24px;
-            padding: 20px 0;
-            scrollbar-width: none;
+            to {
+                width: 100%
+            }
         }
-        .truck-scroll::-webkit-scrollbar { display: none; }
-        .truck-card-v2 {
-            min-width: 300px;
-            background: var(--bg-card);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-color);
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: var(--primary);
+            }
         }
+
+
 
         @media (max-width: 768px) {
-            .hero-2 { flex-direction: column; height: auto; }
-            .hero-2-image { height: 400px; width: 100%; }
+            .hero-2 {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .hero-2-image {
+                height: 400px;
+                width: 100%;
+            }
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar">
         <div class="container nav-container">
@@ -67,68 +94,160 @@
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="overview.html" class="nav-link dashboard-link">Dashboard</a></li>
             </ul>
-            <div class="nav-controls">
-                <button class="icon-btn rtl-toggle-btn"><i class="fa-solid fa-globe"></i></button>
-                <button class="icon-btn theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
-                <a href="login.html" class="btn btn-primary">Login</a>
+            <div class="nav-right">
+                <div class="nav-controls">
+                    <button class="icon-btn rtl-toggle-btn"><i class="fa-solid fa-globe"></i></button>
+                    <button class="icon-btn theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
+                    <a href="login.html" class="btn btn-primary">Login</a>
+                </div>
+                <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
             </div>
-            <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
         </div>
     </nav>
 
-    <section class="hero-2">
-        <div class="container" style="display: flex; align-items: center;">
-            <div class="hero-2-text">
-                <div class="typing-container">Food Trucks, Redefined</div>
-                <p>Experience the future of street food with real-time tracking and premium catering services designed for the modern lifestyle.</p>
-                <div style="margin-top: 32px; display: flex; gap: 16px;">
-                    <button class="btn btn-primary">Our Fleet</button>
-                    <button class="btn btn-outline">Learn More</button>
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay"></div>
+    <div class="mobile-menu">
+        <button class="mobile-close"><i class="fa-solid fa-xmark"></i></button>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 20px;">
+            <li><a href="index.html" class="nav-link text-dark" style="font-size: 1.2rem;">Home</a></li>
+            <li><a href="home2.html" class="nav-link active" style="font-size: 1.2rem;">Home 2</a></li>
+            <li><a href="services.html" class="nav-link" style="font-size: 1.2rem;">Services</a></li>
+            <li><a href="blog.html" class="nav-link" style="font-size: 1.2rem;">Blog</a></li>
+            <li><a href="contact.html" class="nav-link" style="font-size: 1.2rem;">Contact</a></li>
+            <li><a href="overview.html" class="nav-link dashboard-link" style="font-size: 1.2rem;">Dashboard</a></li>
+            <li><a href="login.html" class="btn btn-primary" style="text-align: center;">Login</a></li>
+        </ul>
+    </div>
+
+
+    <section style="display: flex; align-items: center; background: var(--bg-color); padding: 100px 0 80px;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                <!-- Left Content -->
+                <div style="animation: slideUp 1s ease-out 0.3s both;">
+                    <div
+                        style="display: inline-block; background: var(--primary); color: #FFF; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 24px;">
+                        🚚 Fleet Management 2.0</div>
+                    <h1
+                        style="font-size: clamp(2.5rem, 6vw, 4.5rem); font-family: var(--font-heading); color: var(--text-dark); line-height: 1.2; margin-bottom: 24px;">
+                        Food Trucks,<br><span style="color: var(--primary);">Redefined</span></h1>
+                    <p style="font-size: 1.2rem; color: var(--text-light); margin-bottom: 32px; line-height: 1.8;">
+                        Experience the future of street food with real-time tracking and premium catering services
+                        designed for the modern lifestyle.</p>
+                    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                        <a href="#featured" class="btn btn-primary" style="padding: 16px 32px;">Explore Fleet</a>
+                        <a href="services.html" class="btn btn-outline" style="padding: 16px 32px;">Learn More</a>
+                    </div>
+                    <!-- Stats -->
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px;">
+                        <div>
+                            <h3
+                                style="font-size: 2rem; color: var(--primary); font-family: var(--font-heading); margin-bottom: 4px;">
+                                50+</h3>
+                            <p style="font-size: 0.9rem; color: var(--text-light);">Active Trucks</p>
+                        </div>
+                        <div>
+                            <h3
+                                style="font-size: 2rem; color: var(--primary); font-family: var(--font-heading); margin-bottom: 4px;">
+                                20K+</h3>
+                            <p style="font-size: 0.9rem; color: var(--text-light);">Daily Customers</p>
+                        </div>
+                        <div>
+                            <h3
+                                style="font-size: 2rem; color: var(--primary); font-family: var(--font-heading); margin-bottom: 4px;">
+                                4.8★</h3>
+                            <p style="font-size: 0.9rem; color: var(--text-light);">Rating</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Image -->
+                <div style="position: relative; animation: slideUp 1s ease-out 0.5s both;">
+                    <div
+                        style="position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
+                        <img src="https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?auto=format&fit=crop&q=80&w=1200"
+                            alt="Food Truck" style="width: 100%; height: 600px; object-fit: cover;">
+                        <!-- Overlay Badge -->
+                        <div
+                            style="position: absolute; bottom: 24px; left: 24px; background: rgba(255,255,255,0.95); padding: 20px 24px; border-radius: 16px; backdrop-filter: blur(10px);">
+                            <p style="font-weight: 600; color: #1A1D23; margin-bottom: 4px;">🔥 Trending Now</p>
+                            <p style="font-size: 0.9rem; color: #6B7280;">The Burger Bus @ Downtown</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="hero-2-image">
-                <img src="https://images.unsplash.com/photo-1579621970795-87f967f0a711?auto=format&fit=crop&q=80&w=1000" alt="Truck">
-            </div>
         </div>
-    </section>
 
+        <style>
+            @media (max-width: 968px) {
+                section>div>div {
+                    grid-template-columns: 1fr !important;
+                    text-align: center;
+                }
+
+                section>div>div>div:first-child {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                section>div>div>div:first-child>div[style*="display: flex"] {
+                    justify-content: center;
+                }
+
+                section>div>div>div:last-child {
+                    order: -1;
+                }
+
+                section>div>div>div:last-child>div>img {
+                    height: 400px !important;
+                }
+            }
+        </style>
+    </section>
+    <!-- Popular Menu Items -->
     <section>
         <div class="container">
-            <h2 class="section-heading">Featured Trucks</h2>
-            <div class="truck-scroll">
-                <div class="truck-card-v2">
-                    <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?auto=format&fit=crop&q=80&w=400" alt="Pizza" style="width:100%; height:180px; object-fit:cover;">
-                    <div style="padding: 20px;">
-                        <h3>Pizza Express</h3>
-                        <p>Wood-fired artisanal pizzas.</p>
-                    </div>
+            <h2 class="section-heading">Fan Favorites</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&q=80&w=600"
+                        alt="Burger"
+                        style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;">
+                    <h3 style="text-align: center; margin-bottom: 8px;">Double Smash Burger</h3>
+                    <p
+                        style="margin: 8px 0; font-weight: 600; color: var(--primary); text-align: center; font-size: 1.1rem;">
+                        $12.99</p>
+                    <p style="text-align: center; color: var(--text-light);">Two perfectly smashed patties with melted
+                        cheese, crispy bacon, and our secret sauce.</p>
                 </div>
-                <div class="truck-card-v2">
-                    <img src="https://images.unsplash.com/photo-1512152272829-e3139592d56f?auto=format&fit=crop&q=80&w=400" alt="Burger" style="width:100%; height:180px; object-fit:cover;">
-                    <div style="padding: 20px;">
-                        <h3>Steak & Bun</h3>
-                        <p>Premium beef sliders and fries.</p>
-                    </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?auto=format&fit=crop&q=80&w=600"
+                        alt="Tacos"
+                        style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;">
+                    <h3 style="text-align: center; margin-bottom: 8px;">Al Pastor Tacos</h3>
+                    <p
+                        style="margin: 8px 0; font-weight: 600; color: var(--primary); text-align: center; font-size: 1.1rem;">
+                        $10.99</p>
+                    <p style="text-align: center; color: var(--text-light);">Three marinated pork tacos with pineapple,
+                        cilantro, and fresh lime on corn tortillas.</p>
                 </div>
-                <div class="truck-card-v2">
-                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=400" alt="Thai" style="width:100%; height:180px; object-fit:cover;">
-                    <div style="padding: 20px;">
-                        <h3>Thai Mobile</h3>
-                        <p>Authentic pad thai and curry.</p>
-                    </div>
-                </div>
-                <div class="truck-card-v2">
-                    <img src="https://images.unsplash.com/photo-1544333346-64e4fe18624b?auto=format&fit=crop&q=80&w=400" alt="Smoothie" style="width:100%; height:180px; object-fit:cover;">
-                    <div style="padding: 20px;">
-                        <h3>Juice Box</h3>
-                        <p>Freshly squeezed fruit juices.</p>
-                    </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&q=80&w=600"
+                        alt="Gelato"
+                        style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;">
+                    <h3 style="text-align: center; margin-bottom: 8px;">Artisan Gelato</h3>
+                    <p
+                        style="margin: 8px 0; font-weight: 600; color: var(--primary); text-align: center; font-size: 1.1rem;">
+                        $6.99</p>
+                    <p style="text-align: center; color: var(--text-light);">Handcrafted Italian gelato in rotating
+                        seasonal flavors with premium ingredients.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <section style="background: var(--accent);">
+    <section>
         <div class="container">
             <h2 class="section-heading">Why Choose Us</h2>
             <div class="card-grid">
@@ -148,12 +267,87 @@
         </div>
     </section>
 
+    <section id="featured">
+        <div class="container">
+            <h2 class="section-heading">Featured Trucks</h2>
+            <div class="truck-grid">
+                <div class="truck-card-v2">
+                    <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?auto=format&fit=crop&q=80&w=400"
+                        alt="Pizza" style="width:100%; height:180px; object-fit:cover;">
+                    <div style="padding: 20px; text-align: center;">
+                        <h3>Pizza Express</h3>
+                        <p>Wood-fired artisanal pizzas.</p>
+                    </div>
+                </div>
+                <div class="truck-card-v2">
+                    <img src="https://images.unsplash.com/photo-1512152272829-e3139592d56f?auto=format&fit=crop&q=80&w=400"
+                        alt="Burger" style="width:100%; height:180px; object-fit:cover;">
+                    <div style="padding: 20px; text-align: center;">
+                        <h3>Steak & Bun</h3>
+                        <p>Premium beef sliders and fries.</p>
+                    </div>
+                </div>
+                <div class="truck-card-v2">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=400"
+                        alt="Thai" style="width:100%; height:180px; object-fit:cover;">
+                    <div style="padding: 20px; text-align: center;">
+                        <h3>Thai Mobile</h3>
+                        <p>Authentic pad thai and curry.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Customer Testimonials -->
+    <section style="background: var(--accent);">
+        <div class="container">
+            <h2 class="section-heading" style="color: #1A1D23;">What Our Customers Say</h2>
+            <div class="card-grid">
+                <div class="card" style="text-align: center;">
+                    <div
+                        style="width: 60px; height: 60px; border-radius: 50%; background: var(--primary); color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin: 0 auto 20px; font-family: var(--font-heading);">
+                        SM</div>
+                    <div style="color: var(--primary); font-size: 1.5rem; margin-bottom: 16px;">★★★★★</div>
+                    <p style="font-style: italic; color: var(--text-light); margin-bottom: 20px; line-height: 1.8;">
+                        "Best street tacos I've ever had! The app made it so easy to track down Taco Wheels. Highly
+                        recommend!"</p>
+                    <h4 style="color: var(--text-dark); margin-bottom: 4px;">Sarah Martinez</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-light);">Regular Customer</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div
+                        style="width: 60px; height: 60px; border-radius: 50%; background: var(--primary); color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin: 0 auto 20px; font-family: var(--font-heading);">
+                        JK</div>
+                    <div style="color: var(--primary); font-size: 1.5rem; margin-bottom: 16px;">★★★★★</div>
+                    <p style="font-style: italic; color: var(--text-light); margin-bottom: 20px; line-height: 1.8;">
+                        "Booked TruckBite for our company event. Professional service and amazing food. Our team loved
+                        it!"</p>
+                    <h4 style="color: var(--text-dark); margin-bottom: 4px;">James Kim</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-light);">Corporate Client</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div
+                        style="width: 60px; height: 60px; border-radius: 50%; background: var(--primary); color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin: 0 auto 20px; font-family: var(--font-heading);">
+                        ET</div>
+                    <div style="color: var(--primary); font-size: 1.5rem; margin-bottom: 16px;">★★★★★</div>
+                    <p style="font-style: italic; color: var(--text-light); margin-bottom: 20px; line-height: 1.8;">
+                        "Sweet Freeze saved our wedding! Guests couldn't stop raving about the artisanal gelato bar."
+                    </p>
+                    <h4 style="color: var(--text-dark); margin-bottom: 4px;">Emily & Tom</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-light);">Wedding Couple</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h4 style="color: var(--primary);"><i class="fa-solid fa-truck-fast"></i> TruckBite</h4>
-                    <p>Elevating street food with real-time tracking.</p>
+                    <h4
+                        style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-truck-fast"></i> TruckBite
+                    </h4>
+                    <p>Elevating street food with real-time tracking, premium catering, and unforgettable flavors.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
@@ -162,18 +356,30 @@
                     <a href="blog.html">Blog</a>
                     <a href="contact.html">Contact</a>
                 </div>
-                <div class="footer-col"><h4>Follow</h4><a href="#">Insta</a><a href="#">Twitter</a></div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                </div>
                 <div class="footer-col">
                     <h4>Newsletter</h4>
-                    <input type="email" placeholder="Email" style="margin-bottom: 8px;">
-                    <button class="btn btn-primary">Join</button>
+                    <p>Get updates on truck locations and new menus.</p>
+                    <div style="display: flex; gap: 8px; margin-top: 16px;">
+                        <input type="email" placeholder="Your email"
+                            style="background:#1A1D23; border-color:#3E4149; color:#FFF;">
+                        <button class="btn btn-primary" style="padding: 12px;"><i
+                                class="fa-solid fa-paper-plane"></i></button>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">&copy; 2026 TruckBite</div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TruckBite Fleet Management. All rights reserved.</p>
+            </div>
         </div>
     </footer>
     <script src="js/rtl-toggle.js"></script>
     <script src="js/script.js"></script>
 </body>
-</html>
 
+</html>

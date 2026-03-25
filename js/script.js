@@ -34,10 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close sidebar when clicking outside on mobile
     document.addEventListener('click', (e) => {
       const sidebar = document.querySelector('.dashboard-sidebar');
-      if (document.body.classList.contains('sidebar-active') && 
-          sidebar && 
-          !sidebar.contains(e.target) && 
-          !dashboardHamburger.contains(e.target)) {
+      if (document.body.classList.contains('sidebar-active') &&
+        sidebar &&
+        !sidebar.contains(e.target) &&
+        !dashboardHamburger.contains(e.target)) {
         document.body.classList.remove('sidebar-active');
       }
     });
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (logoutBtn) {
     logoutBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      localStorage.removeItem('user-logged-in');
+
       window.location.href = 'index.html';
     });
   }

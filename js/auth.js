@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loginForm.addEventListener('submit', (e) => {
       e.preventDefault();
       // Mock login
-      localStorage.setItem('user-logged-in', 'true');
+
       window.location.href = 'overview.html';
     });
   }
@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (registerForm) {
     const termsCheck = document.getElementById('terms');
     const registerBtn = document.getElementById('register-btn');
-    
+
     termsCheck.addEventListener('change', (e) => {
       registerBtn.disabled = !e.target.checked;
-      if(e.target.checked) {
+      if (e.target.checked) {
         registerBtn.style.opacity = '1';
         registerBtn.style.cursor = 'pointer';
       } else {
@@ -30,8 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     registerForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      if(termsCheck.checked) {
-        localStorage.setItem('user-logged-in', 'true');
+      if (termsCheck.checked) {
         window.location.href = 'overview.html';
       }
     });

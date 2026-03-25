@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <nav class="navbar">
         <div class="container nav-container">
@@ -19,71 +21,158 @@
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="overview.html" class="nav-link dashboard-link">Dashboard</a></li>
             </ul>
-            <div class="nav-controls">
-                <button class="icon-btn rtl-toggle-btn"><i class="fa-solid fa-globe"></i></button>
-                <button class="icon-btn theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
-                <a href="login.html" class="btn btn-primary">Login</a>
+            <div class="nav-right">
+                <div class="nav-controls">
+                    <button class="icon-btn rtl-toggle-btn"><i class="fa-solid fa-globe"></i></button>
+                    <button class="icon-btn theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
+                    <a href="login.html" class="btn btn-primary">Login</a>
+                </div>
+                <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
             </div>
-            <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
         </div>
     </nav>
 
-    <section class="hero" style="height: 40vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=1600') center/cover;">
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay"></div>
+    <div class="mobile-menu">
+        <button class="mobile-close"><i class="fa-solid fa-xmark"></i></button>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 20px;">
+            <li><a href="index.html" class="nav-link text-dark" style="font-size: 1.2rem;">Home</a></li>
+            <li><a href="home2.html" class="nav-link" style="font-size: 1.2rem;">Home 2</a></li>
+            <li><a href="services.html" class="nav-link active" style="font-size: 1.2rem;">Services</a></li>
+            <li><a href="blog.html" class="nav-link" style="font-size: 1.2rem;">Blog</a></li>
+            <li><a href="contact.html" class="nav-link" style="font-size: 1.2rem;">Contact</a></li>
+            <li><a href="overview.html" class="nav-link dashboard-link" style="font-size: 1.2rem;">Dashboard</a></li>
+            <li><a href="login.html" class="btn btn-primary" style="text-align: center;">Login</a></li>
+        </ul>
+    </div>
+
+    <section class="hero"
+        style="height: 40vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=1600') center/cover;">
         <h1>Our Services</h1>
     </section>
 
     <section>
         <div class="container">
             <h2 class="section-heading">Catering & Fleet Solutions</h2>
-            <div class="card-grid">
+            <div class="card-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
                 <div class="card">
-                    <i class="fa-solid fa-calendar-star" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 24px;"></i>
-                    <h3>Event Catering</h3>
-                    <p>Make your parties memorable with our diverse fleet of food trucks offering custom menus.</p>
-                    <a href="contact.html" class="btn btn-outline" style="margin-top: 24px;">Learn More</a>
+                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=600"
+                        alt="Event Catering"
+                        style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;">
+                    <h3 style="text-align: center;">Event Catering</h3>
+                    <p style="text-align: center;">Make your parties memorable with our diverse fleet of food trucks
+                        offering custom menus.</p>
+                    <a href="contact.html" class="btn btn-outline" style="margin-top: 24px; width: 100%;">Learn More</a>
                 </div>
                 <div class="card">
-                    <i class="fa-solid fa-building-user" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 24px;"></i>
-                    <h3>Corporate Programs</h3>
-                    <p>Flexible lunch programs for offices, ensuring your team has access to fresh food daily.</p>
-                    <a href="contact.html" class="btn btn-outline" style="margin-top: 24px;">Learn More</a>
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600"
+                        alt="Corporate Programs"
+                        style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;">
+                    <h3 style="text-align: center;">Corporate Programs</h3>
+                    <p style="text-align: center;">Flexible lunch programs for offices, ensuring your team has access to
+                        fresh food daily.</p>
+                    <a href="contact.html" class="btn btn-outline" style="margin-top: 24px; width: 100%;">Learn More</a>
                 </div>
                 <div class="card">
-                    <i class="fa-solid fa-tent" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 24px;"></i>
-                    <h3>Festival Partnerships</h3>
-                    <p>High-capacity food service solutions for music festivals and public gatherings.</p>
-                    <a href="contact.html" class="btn btn-outline" style="margin-top: 24px;">Learn More</a>
+                    <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&q=80&w=600"
+                        alt="Festival Partnerships"
+                        style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;">
+                    <h3 style="text-align: center;">Festival Partnerships</h3>
+                    <p style="text-align: center;">High-capacity food service solutions for music festivals and public
+                        gatherings.</p>
+                    <a href="contact.html" class="btn btn-outline" style="margin-top: 24px; width: 100%;">Learn More</a>
                 </div>
                 <div class="card">
-                    <i class="fa-solid fa-heart" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 24px;"></i>
-                    <h3>Private Bookings</h3>
-                    <p>From weddings to birthdays, our trucks bring the kitchen directly to your venue.</p>
-                    <a href="contact.html" class="btn btn-outline" style="margin-top: 24px;">Learn More</a>
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=600"
+                        alt="Private Bookings"
+                        style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;">
+                    <h3 style="text-align: center;">Private Bookings</h3>
+                    <p style="text-align: center;">From weddings to birthdays, our trucks bring the kitchen directly to
+                        your venue.</p>
+                    <a href="contact.html" class="btn btn-outline" style="margin-top: 24px; width: 100%;">Learn More</a>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80&w=600"
+                        alt="Mobile Catering"
+                        style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;">
+                    <h3 style="text-align: center;">Mobile Catering</h3>
+                    <p style="text-align: center;">Bring gourmet food to any location fully-equipped mobile
+                        kitchen solutions.</p>
+                    <a href="contact.html" class="btn btn-outline" style="margin-top: 24px; width: 100%;">Learn More</a>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?auto=format&fit=crop&q=80&w=600"
+                        alt="Street Food Markets"
+                        style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;">
+                    <h3 style="text-align: center;">Street Food Markets</h3>
+                    <p style="text-align: center;">Weekly pop-up markets featuring fleet in rotating
+                        neighborhood locations.</p>
+                    <a href="contact.html" class="btn btn-outline" style="margin-top: 24px; width: 100%;">Learn More</a>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 64px;">
-                <h3 style="margin-bottom: 24px;">Need a custom quote?</h3>
+                <h3 style="margin-bottom: 24px; color: var(--text-dark);">Need a custom quote?</h3>
                 <a href="contact.html" class="btn btn-primary">Contact Sales Team</a>
             </div>
         </div>
+
+        <style>
+            @media (max-width: 968px) {
+                .card-grid {
+                    grid-template-columns: repeat(2, 1fr) !important;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .card-grid {
+                    grid-template-columns: 1fr !important;
+                }
+            }
+        </style>
     </section>
 
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h4 style="color: var(--primary);"><i class="fa-solid fa-truck-fast"></i> TruckBite</h4>
-                    <p>Elevating street food with real-time tracking.</p>
+                    <h4
+                        style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-truck-fast"></i> TruckBite
+                    </h4>
+                    <p>Elevating street food with real-time tracking, premium catering, and unforgettable flavors.</p>
                 </div>
-                <div class="footer-col"><h4>Quick Links</h4><a href="index.html">Home</a><a href="services.html">Services</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div>
-                <div class="footer-col"><h4>Follow</h4><a href="#">Insta</a><a href="#">Twitter</a></div>
-                <div class="footer-col"><h4>Newsletter</h4><input type="email" placeholder="Email"><button class="btn btn-primary">Join</button></div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Get updates on truck locations and new menus.</p>
+                    <div style="display: flex; gap: 8px; margin-top: 16px;">
+                        <input type="email" placeholder="Your email"
+                            style="background:#1A1D23; border-color:#3E4149; color:#FFF;">
+                        <button class="btn btn-primary" style="padding: 12px;"><i
+                                class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
             </div>
-            <div class="footer-bottom">&copy; 2026 TruckBite</div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TruckBite Fleet Management. All rights reserved.</p>
+            </div>
         </div>
     </footer>
     <script src="js/rtl-toggle.js"></script>
     <script src="js/script.js"></script>
 </body>
-</html>
 
+</html>

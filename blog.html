@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 32px;
         }
+
         .blog-card {
             background: var(--bg-card);
             border-radius: 16px;
@@ -23,13 +25,33 @@
             position: relative;
             border: 1px solid var(--border-color);
         }
-        .blog-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
-        .blog-img-wrapper { height: 200px; overflow: hidden; position: relative; }
-        .blog-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .blog-card:hover .blog-img-wrapper img { transform: scale(1.1); }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .blog-img-wrapper {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .blog-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .blog-card:hover .blog-img-wrapper img {
+            transform: scale(1.1);
+        }
+
         .category-tag {
             position: absolute;
-            top: 16px; left: 16px;
+            top: 16px;
+            left: 16px;
             background: var(--primary);
             color: #fff;
             padding: 4px 12px;
@@ -37,7 +59,14 @@
             font-size: 0.8rem;
             font-weight: 600;
         }
-        .blog-content { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+
+        .blog-content {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
         .blog-title {
             font-size: 1.25rem;
             margin-bottom: 12px;
@@ -46,6 +75,7 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
+
         .blog-excerpt {
             color: var(--text-light);
             font-size: 0.95rem;
@@ -56,6 +86,7 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
+
         .blog-footer {
             display: flex;
             justify-content: space-between;
@@ -65,12 +96,34 @@
             font-size: 0.85rem;
             color: var(--text-light);
         }
-        .read-more { color: var(--primary); font-weight: 600; }
 
-        @media (max-width: 1024px) { .blog-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; } }
-        @media (max-width: 768px) { .blog-grid { grid-template-columns: 1fr; gap: 20px; } }
+        .read-more {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        @media (max-width: 1024px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
+
 <body>
     <nav class="navbar">
         <div class="container nav-container">
@@ -83,16 +136,34 @@
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="overview.html" class="nav-link dashboard-link">Dashboard</a></li>
             </ul>
-            <div class="nav-controls">
-                <button class="icon-btn rtl-toggle-btn"><i class="fa-solid fa-globe"></i></button>
-                <button class="icon-btn theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
-                <a href="login.html" class="btn btn-primary">Login</a>
+            <div class="nav-right">
+                <div class="nav-controls">
+                    <button class="icon-btn rtl-toggle-btn"><i class="fa-solid fa-globe"></i></button>
+                    <button class="icon-btn theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
+                    <a href="login.html" class="btn btn-primary">Login</a>
+                </div>
+                <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
             </div>
-            <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
         </div>
     </nav>
 
-    <section class="hero" style="height: 40vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1541167760496-162955ed2a9f?auto=format&fit=crop&q=80&w=1600') center/cover;">
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay"></div>
+    <div class="mobile-menu">
+        <button class="mobile-close"><i class="fa-solid fa-xmark"></i></button>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 20px;">
+            <li><a href="index.html" class="nav-link text-dark" style="font-size: 1.2rem;">Home</a></li>
+            <li><a href="home2.html" class="nav-link" style="font-size: 1.2rem;">Home 2</a></li>
+            <li><a href="services.html" class="nav-link" style="font-size: 1.2rem;">Services</a></li>
+            <li><a href="blog.html" class="nav-link active" style="font-size: 1.2rem;">Blog</a></li>
+            <li><a href="contact.html" class="nav-link" style="font-size: 1.2rem;">Contact</a></li>
+            <li><a href="overview.html" class="nav-link dashboard-link" style="font-size: 1.2rem;">Dashboard</a></li>
+            <li><a href="login.html" class="btn btn-primary" style="text-align: center;">Login</a></li>
+        </ul>
+    </div>
+
+    <section class="hero"
+        style="height: 40vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1541167760496-162955ed2a9f?auto=format&fit=crop&q=80&w=1600') center/cover;">
         <h1>Food Truck Stories</h1>
     </section>
 
@@ -103,12 +174,14 @@
                 <!-- Post 1 -->
                 <article class="blog-card">
                     <div class="blog-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1501333341092-20a67277681d?auto=format&fit=crop&q=80&w=600" alt="Blog 1">
+                        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&q=80&w=600"
+                            alt="Blog 1">
                         <span class="category-tag">Locations</span>
                     </div>
                     <div class="blog-content">
                         <h3 class="blog-title">Best Food Truck Locations in the City</h3>
-                        <p class="blog-excerpt">Discover where the most vibrant street food scenes are happening this weekend. From downtown parks to hidden neighborhood gems.</p>
+                        <p class="blog-excerpt">Discover where the most vibrant street food scenes are happening this
+                            weekend. From downtown parks to hidden neighborhood gems.</p>
                         <div class="blog-footer">
                             <span>5 min read</span>
                             <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
@@ -118,12 +191,14 @@
                 <!-- Post 2 -->
                 <article class="blog-card">
                     <div class="blog-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?auto=format&fit=crop&q=80&w=600" alt="Blog 2">
+                        <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?auto=format&fit=crop&q=80&w=600"
+                            alt="Blog 2">
                         <span class="category-tag">Catering</span>
                     </div>
                     <div class="blog-content">
                         <h3 class="blog-title">How to Book TruckBite for Your Event</h3>
-                        <p class="blog-excerpt">Planning a wedding or corporate party? Here's our comprehensive guide to booking the perfect food truck experience for your guests.</p>
+                        <p class="blog-excerpt">Planning a wedding or corporate party? Here's our comprehensive guide to
+                            booking the perfect food truck experience for your guests.</p>
                         <div class="blog-footer">
                             <span>4 min read</span>
                             <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
@@ -133,12 +208,14 @@
                 <!-- Post 3 -->
                 <article class="blog-card">
                     <div class="blog-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?auto=format&fit=crop&q=80&w=600" alt="Blog 3">
+                        <img src="https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?auto=format&fit=crop&q=80&w=600"
+                            alt="Blog 3">
                         <span class="category-tag">Culture</span>
                     </div>
                     <div class="blog-content">
                         <h3 class="blog-title">Meet Our Chefs: Behind the Wheels</h3>
-                        <p class="blog-excerpt">Get to know the passionate culinary artists who create the flavors you love, working in the compact kitchens of TruckBite.</p>
+                        <p class="blog-excerpt">Get to know the passionate culinary artists who create the flavors you
+                            love, working in the compact kitchens of TruckBite.</p>
                         <div class="blog-footer">
                             <span>7 min read</span>
                             <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
@@ -148,12 +225,14 @@
                 <!-- Post 4 -->
                 <article class="blog-card">
                     <div class="blog-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1512152272829-e3139592d56f?auto=format&fit=crop&q=80&w=600" alt="Blog 4">
+                        <img src="https://images.unsplash.com/photo-1512152272829-e3139592d56f?auto=format&fit=crop&q=80&w=600"
+                            alt="Blog 4">
                         <span class="category-tag">Food</span>
                     </div>
                     <div class="blog-content">
                         <h3 class="blog-title">Top 5 Must-Try Menu Items</h3>
-                        <p class="blog-excerpt">From our signature sliders to the secret sauce tacos, here are the top dishes our fans can't stop talking about this season.</p>
+                        <p class="blog-excerpt">From our signature sliders to the secret sauce tacos, here are the top
+                            dishes our fans can't stop talking about this season.</p>
                         <div class="blog-footer">
                             <span>3 min read</span>
                             <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
@@ -163,12 +242,14 @@
                 <!-- Post 5 -->
                 <article class="blog-card">
                     <div class="blog-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&q=80&w=600" alt="Blog 5">
+                        <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&q=80&w=600"
+                            alt="Blog 5">
                         <span class="category-tag">Events</span>
                     </div>
                     <div class="blog-content">
                         <h3 class="blog-title">TruckBite at Music Festivals</h3>
-                        <p class="blog-excerpt">Relive the highlights of our summer festival tour. We served over 10,000 happy fans across five different states.</p>
+                        <p class="blog-excerpt">Relive the highlights of our summer festival tour. We served over 10,000
+                            happy fans across five different states.</p>
                         <div class="blog-footer">
                             <span>6 min read</span>
                             <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
@@ -178,12 +259,14 @@
                 <!-- Post 6 -->
                 <article class="blog-card">
                     <div class="blog-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600" alt="Blog 6">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600"
+                            alt="Blog 6">
                         <span class="category-tag">Business</span>
                     </div>
                     <div class="blog-content">
                         <h3 class="blog-title">Catering Tips for Corporate Events</h3>
-                        <p class="blog-excerpt">How to optimize food flow and ensure dietary requirements are met when hosting a food truck lunch at your office headquarters.</p>
+                        <p class="blog-excerpt">How to optimize food flow and ensure dietary requirements are met when
+                            hosting a food truck lunch at your office headquarters.</p>
                         <div class="blog-footer">
                             <span>5 min read</span>
                             <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
@@ -198,16 +281,43 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h4 style="color: var(--primary);"><i class="fa-solid fa-truck-fast"></i> TruckBite</h4>
-                    <p>Elevating street food with real-time tracking.</p>
+                    <h4
+                        style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-truck-fast"></i> TruckBite
+                    </h4>
+                    <p>Elevating street food with real-time tracking, premium catering, and unforgettable flavors.</p>
                 </div>
-                <div class="footer-col"><h4>Quick Links</h4><a href="index.html">Home</a><a href="blog.html">Blog</a></div>
-                <div class="footer-col"><h4>Follow</h4><a href="#">Insta</a><a href="#">Twitter</a></div>
-                <div class="footer-col"><h4>Newsletter</h4><input type="email" placeholder="Email"><button class="btn btn-primary">Join</button></div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Get updates on truck locations and new menus.</p>
+                    <div style="display: flex; gap: 8px; margin-top: 16px;">
+                        <input type="email" placeholder="Your email"
+                            style="background:#1A1D23; border-color:#3E4149; color:#FFF;">
+                        <button class="btn btn-primary" style="padding: 12px;"><i
+                                class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TruckBite Fleet Management. All rights reserved.</p>
             </div>
         </div>
     </footer>
     <script src="js/rtl-toggle.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>
