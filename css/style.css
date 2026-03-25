@@ -346,6 +346,12 @@ section {
   padding-top: 80px;
 }
 
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .hero {
+    height: 650px;
+  }
+}
+
 .hero-content {
   max-width: 800px;
   z-index: 2;
