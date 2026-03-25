@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruckBite - Food Truck Fleet Management</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-truck-fast"></i> TruckBite
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="home2.html" class="nav-link">Home 2</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="overview.html" class="nav-link dashboard-link">Dashboard</a></li>
+            </ul>
+
+            <div class="nav-controls">
+                <!-- Theme and RTL in Navbar (Desktop) -->
+                <button class="icon-btn rtl-toggle-btn" aria-label="Toggle RTL"><i class="fa-solid fa-globe"></i></button>
+                <button class="icon-btn theme-toggle-btn" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+                <a href="login.html" class="btn btn-primary">Login</a>
+            </div>
+
+            <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay"></div>
+    <div class="mobile-menu">
+        <button class="mobile-close"><i class="fa-solid fa-xmark"></i></button>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 20px;">
+            <li><a href="index.html" class="nav-link text-dark" style="font-size: 1.2rem;">Home</a></li>
+            <li><a href="home2.html" class="nav-link" style="font-size: 1.2rem;">Home 2</a></li>
+            <li><a href="services.html" class="nav-link" style="font-size: 1.2rem;">Services</a></li>
+            <li><a href="blog.html" class="nav-link" style="font-size: 1.2rem;">Blog</a></li>
+            <li><a href="contact.html" class="nav-link" style="font-size: 1.2rem;">Contact</a></li>
+            <li><a href="overview.html" class="nav-link dashboard-link" style="font-size: 1.2rem;">Dashboard</a></li>
+            <li><a href="login.html" class="btn btn-primary" style="text-align: center;">Login</a></li>
+        </ul>
+        <div style="display: flex; gap: 16px; margin-top: 20px;">
+            <button class="icon-btn rtl-toggle-btn"><i class="fa-solid fa-globe"></i> RTL</button>
+            <button class="icon-btn theme-toggle-btn"><i class="fa-solid fa-moon"></i> Theme</button>
+        </div>
+    </div>
+
+    <!-- Home Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Street Food, Elevated</h1>
+            <p>Track our trucks in real-time. Discover flavors. Book for your next event.</p>
+            <div class="hero-btns">
+                <a href="#locations" class="btn btn-primary"><i class="fa-solid fa-location-dot float"></i> Find Trucks Near You</a>
+                <a href="services.html" class="btn btn-outline" style="color:#fff; border-color:#fff;">Book an Event</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Locations (Mock) -->
+    <section id="locations" style="background: var(--accent);">
+        <div class="container">
+            <h2 class="section-heading">Live Truck Locations</h2>
+            <div style="width: 100%; height: 400px; background: #e5e7eb; border-radius: 16px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=1600" style="width:100%; height:100%; object-fit: cover; opacity: 0.5; position: absolute;" alt="Map">
+                <div style="z-index: 2; display: flex; gap: 24px;">
+                    <!-- Mock Markers -->
+                    <div style="width:40px;height:40px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-lg);animation:float 2s infinite;"><i class="fa-solid fa-burger"></i></div>
+                    <div style="width:40px;height:40px;background:var(--secondary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-lg);animation:float 3s infinite;"><i class="fa-solid fa-pizza-slice"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Fleet -->
+    <section>
+        <div class="container">
+            <h2 class="section-heading">Our Fleet</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?auto=format&fit=crop&q=80&w=600" alt="Truck 1" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 24px;">
+                    <h3>The Burger Bus</h3>
+                    <p style="margin: 8px 0; font-weight: 500; color: var(--primary);">American Gourmet</p>
+                    <p>Serving the best smashed patties in town with our signature secret sauce.</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&q=80&w=600" alt="Truck 2" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 24px;">
+                    <h3>Taco Wheels</h3>
+                    <p style="margin: 8px 0; font-weight: 500; color: var(--primary);">Mexican Street Food</p>
+                    <p>Authentic al pastor and carne asada tacos on freshly pressed tortillas.</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600" alt="Truck 3" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 24px;">
+                    <h3>Sweet Freeze</h3>
+                    <p style="margin: 8px 0; font-weight: 500; color: var(--primary);">Desserts</p>
+                    <p>Artisanal gelato and ice cream sandwiches to cool down your summer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section style="background: var(--accent);">
+        <div class="container">
+            <h2 class="section-heading">How It Works</h2>
+            <div class="card-grid" style="gap: 40px;">
+                <div style="flex: 1; text-align: center;">
+                    <div style="font-size: 3rem; color: var(--primary); margin-bottom: 16px;"><i class="fa-solid fa-location-crosshairs"></i></div>
+                    <h3>1. Track</h3>
+                    <p>Find the nearest TruckBite using our live map feature.</p>
+                </div>
+                <div style="flex: 1; text-align: center;">
+                    <div style="font-size: 3rem; color: var(--primary); margin-bottom: 16px;"><i class="fa-solid fa-mobile-screen"></i></div>
+                    <h3>2. Order</h3>
+                    <p>Check the menu online and order ahead or walk right up.</p>
+                </div>
+                <div style="flex: 1; text-align: center;">
+                    <div style="font-size: 3rem; color: var(--primary); margin-bottom: 16px;"><i class="fa-solid fa-utensils"></i></div>
+                    <h3>3. Enjoy</h3>
+                    <p>Savor restaurant-quality food right on the streets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary); display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-truck-fast"></i> TruckBite</h4>
+                    <p>Elevating street food with real-time tracking, premium catering, and unforgettable flavors.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Get updates on truck locations and new menus.</p>
+                    <div style="display: flex; gap: 8px; margin-top: 16px;">
+                        <input type="email" placeholder="Your email" style="background:#1A1D23; border-color:#3E4149; color:#FFF;">
+                        <button class="btn btn-primary" style="padding: 12px;"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TruckBite Fleet Management. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/rtl-toggle.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruckBite - GPS Tracking</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <header class="dashboard-topbar">
+            <div class="topbar-left">
+                <button class="dashboard-hamburger" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <a href="index.html" class="logo" style="text-decoration: none;"><i class="fa-solid fa-truck-fast"></i>
+                    TruckBite</a>
+            </div>
+            <div class="topbar-right">
+                <button class="icon-btn rtl-toggle-btn"><i class="fa-solid fa-globe"></i></button>
+                <button class="icon-btn theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
+                <div class="user-profile-dropdown">TB</div>
+            </div>
+        </header>
+
+        <div class="dashboard-body">
+            <nav class="dashboard-sidebar">
+                <ul class="sidebar-menu">
+                    <li><a href="overview.html" class="sidebar-item"><i class="fa-solid fa-border-all"></i> Overview</a>
+                    </li>
+                    <li><a href="trucks.html" class="sidebar-item"><i class="fa-solid fa-truck"></i> Truck
+                            Management</a></li>
+                    <li><a href="gps.html" class="sidebar-item active"><i class="fa-solid fa-location-dot"></i> GPS
+                            Tracking</a></li>
+                    <li><a href="analytics.html" class="sidebar-item"><i class="fa-solid fa-chart-line"></i>
+                            Analytics</a></li>
+                </ul>
+                <ul class="sidebar-menu sidebar-footer">
+                    <li><a href="index.html" class="sidebar-item logout-link"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                </ul>
+            </nav>
+            
+            
+            
+
+            <main class="dashboard-main">
+                <div class="dashboard-header"
+                    style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h1>GPS Tracking</h1>
+                        <p>Real-time fleet location</p>
+                    </div>
+                    <button class="btn btn-outline"><i class="fa-solid fa-rotate"></i> Refresh Map</button>
+                </div>
+
+                <div class="gps-grid">
+                    <div class="dash-card map-card"
+                        style="padding: 0; min-height: 500px; position: relative; overflow: hidden;">
+                        <div style="width: 100%; height: 100%; background: #eee;">
+                            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=1600"
+                                style="width:100%; height:100%; object-fit: cover; opacity: 0.6;">
+                            <!-- Animated pulses -->
+                            <div
+                                style="position: absolute; top: 20%; left: 30%; width: 20px; height: 20px; background: var(--primary); border-radius: 50%; box-shadow: 0 0 0 rgba(255,107,53, 0.4); animation: pulse 2s infinite;">
+                            </div>
+                            <div
+                                style="position: absolute; top: 50%; left: 60%; width: 20px; height: 20px; background: #3B82F6; border-radius: 50%; box-shadow: 0 0 0 rgba(59, 130, 246, 0.4); animation: pulse 2s infinite 0.5s;">
+                            </div>
+                            <div
+                                style="position: absolute; top: 70%; left: 40%; width: 20px; height: 20px; background: #10B981; border-radius: 50%; box-shadow: 0 0 0 rgba(16, 185, 129, 0.4); animation: pulse 2s infinite 1s;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dash-card list-card">
+                        <h3 style="margin-bottom: 24px;">Active Trucks</h3>
+                        <div style="display: flex; flex-direction: column; gap: 20px;">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 1px solid var(--border-color);">
+                                <span style="display: flex; align-items: center; gap: 10px;">
+                                    <i class="fa-solid fa-circle" style="color: var(--primary); font-size: 0.7rem;"></i>
+                                    <strong>Burger Bus</strong>
+                                </span>
+                                <span class="status-badge"
+                                    style="background: rgba(255,107,53,0.1); color: var(--primary); padding: 4px 8px; border-radius: 4px; font-size: 0.75rem;">Moving</span>
+                            </div>
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 1px solid var(--border-color);">
+                                <span style="display: flex; align-items: center; gap: 10px;">
+                                    <i class="fa-solid fa-circle" style="color: #3B82F6; font-size: 0.7rem;"></i>
+                                    <strong>Taco Wheels</strong>
+                                </span>
+                                <span class="status-badge"
+                                    style="background: rgba(59,130,246,0.1); color: #3B82F6; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem;">Parked</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="display: flex; align-items: center; gap: 10px;">
+                                    <i class="fa-solid fa-circle" style="color: #10B981; font-size: 0.7rem;"></i>
+                                    <strong>Thai Mobile</strong>
+                                </span>
+                                <span class="status-badge"
+                                    style="background: rgba(16,185,129,0.1); color: #10B981; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem;">Moving</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <style>
+        .gps-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        @media (max-width: 1024px) {
+            .gps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .map-card {
+                min-height: 250px !important;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
+            }
+
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 15px rgba(255, 107, 53, 0);
+            }
+
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(255, 107, 53, 0);
+            }
+        }
+    </style>
+    <script src="js/rtl-toggle.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
+

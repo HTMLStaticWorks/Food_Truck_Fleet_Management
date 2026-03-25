@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruckBite - Home 2</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-2 {
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            padding-top: 80px;
+            background: var(--bg-color);
+        }
+        .hero-2-text { flex: 1; padding: 40px; }
+        .hero-2-image { flex: 1; height: 100%; position: relative; }
+        .hero-2-image img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .typing-container {
+            font-size: 3.5rem;
+            font-family: var(--font-heading);
+            margin-bottom: 24px;
+            border-right: 4px solid var(--primary);
+            width: fit-content;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--primary); } }
+
+        .truck-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 24px;
+            padding: 20px 0;
+            scrollbar-width: none;
+        }
+        .truck-scroll::-webkit-scrollbar { display: none; }
+        .truck-card-v2 {
+            min-width: 300px;
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .hero-2 { flex-direction: column; height: auto; }
+            .hero-2-image { height: 400px; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><i class="fa-solid fa-truck-fast"></i> TruckBite</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="home2.html" class="nav-link">Home 2</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="overview.html" class="nav-link dashboard-link">Dashboard</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="icon-btn rtl-toggle-btn"><i class="fa-solid fa-globe"></i></button>
+                <button class="icon-btn theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
+                <a href="login.html" class="btn btn-primary">Login</a>
+            </div>
+            <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <section class="hero-2">
+        <div class="container" style="display: flex; align-items: center;">
+            <div class="hero-2-text">
+                <div class="typing-container">Food Trucks, Redefined</div>
+                <p>Experience the future of street food with real-time tracking and premium catering services designed for the modern lifestyle.</p>
+                <div style="margin-top: 32px; display: flex; gap: 16px;">
+                    <button class="btn btn-primary">Our Fleet</button>
+                    <button class="btn btn-outline">Learn More</button>
+                </div>
+            </div>
+            <div class="hero-2-image">
+                <img src="https://images.unsplash.com/photo-1579621970795-87f967f0a711?auto=format&fit=crop&q=80&w=1000" alt="Truck">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-heading">Featured Trucks</h2>
+            <div class="truck-scroll">
+                <div class="truck-card-v2">
+                    <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?auto=format&fit=crop&q=80&w=400" alt="Pizza" style="width:100%; height:180px; object-fit:cover;">
+                    <div style="padding: 20px;">
+                        <h3>Pizza Express</h3>
+                        <p>Wood-fired artisanal pizzas.</p>
+                    </div>
+                </div>
+                <div class="truck-card-v2">
+                    <img src="https://images.unsplash.com/photo-1512152272829-e3139592d56f?auto=format&fit=crop&q=80&w=400" alt="Burger" style="width:100%; height:180px; object-fit:cover;">
+                    <div style="padding: 20px;">
+                        <h3>Steak & Bun</h3>
+                        <p>Premium beef sliders and fries.</p>
+                    </div>
+                </div>
+                <div class="truck-card-v2">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=400" alt="Thai" style="width:100%; height:180px; object-fit:cover;">
+                    <div style="padding: 20px;">
+                        <h3>Thai Mobile</h3>
+                        <p>Authentic pad thai and curry.</p>
+                    </div>
+                </div>
+                <div class="truck-card-v2">
+                    <img src="https://images.unsplash.com/photo-1544333346-64e4fe18624b?auto=format&fit=crop&q=80&w=400" alt="Smoothie" style="width:100%; height:180px; object-fit:cover;">
+                    <div style="padding: 20px;">
+                        <h3>Juice Box</h3>
+                        <p>Freshly squeezed fruit juices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--accent);">
+        <div class="container">
+            <h2 class="section-heading">Why Choose Us</h2>
+            <div class="card-grid">
+                <div style="flex:1; text-align:center;">
+                    <h2 style="font-size: 3.5rem; color: var(--primary);">50+</h2>
+                    <p>Verified Trucks</p>
+                </div>
+                <div style="flex:1; text-align:center;">
+                    <h2 style="font-size: 3.5rem; color: var(--primary);">20k</h2>
+                    <p>Daily Customers</p>
+                </div>
+                <div style="flex:1; text-align:center;">
+                    <h2 style="font-size: 3.5rem; color: var(--primary);">100%</h2>
+                    <p>Hygienic Rating</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 style="color: var(--primary);"><i class="fa-solid fa-truck-fast"></i> TruckBite</h4>
+                    <p>Elevating street food with real-time tracking.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col"><h4>Follow</h4><a href="#">Insta</a><a href="#">Twitter</a></div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <input type="email" placeholder="Email" style="margin-bottom: 8px;">
+                    <button class="btn btn-primary">Join</button>
+                </div>
+            </div>
+            <div class="footer-bottom">&copy; 2026 TruckBite</div>
+        </div>
+    </footer>
+    <script src="js/rtl-toggle.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
+

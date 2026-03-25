@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruckBite - Truck Management</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .table-container {
+            overflow-x: scroll;
+            /* Force scrollbar visibility */
+            /* For Firefox */
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) #f0f0f0;
+            padding-bottom: 12px;
+        }
+
+        /* Custom Scrollbar for Chrome, Safari and Edge */
+        .table-container::-webkit-scrollbar {
+            height: 12px;
+            /* Slightly thicker */
+            display: block;
+        }
+
+        .table-container::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            /* More visible track */
+            border-radius: 10px;
+        }
+
+        .table-container::-webkit-scrollbar-thumb {
+            background-color: var(--primary);
+            border-radius: 10px;
+            border: 2px solid #f0f0f0;
+            /* Use same color as track for padding effect */
+        }
+
+        .table-container::-webkit-scrollbar-thumb:hover {
+            background-color: #e55a2b;
+        }
+
+        /* Ensure horizontal scroll is triggered even if content fits */
+        table {
+            min-width: 800px;
+        }
+
+        @media (max-width: 768px) {
+            table {
+                min-width: 700px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <header class="dashboard-topbar">
+            <div class="topbar-left">
+                <button class="dashboard-hamburger" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <a href="index.html" class="logo" style="text-decoration: none;"><i class="fa-solid fa-truck-fast"></i>
+                    TruckBite</a>
+            </div>
+            <div class="topbar-right">
+                <button class="icon-btn rtl-toggle-btn"><i class="fa-solid fa-globe"></i></button>
+                <button class="icon-btn theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
+                <div class="user-profile-dropdown">TB</div>
+            </div>
+        </header>
+
+        <div class="dashboard-body">
+            <nav class="dashboard-sidebar">
+                <ul class="sidebar-menu">
+                    <li><a href="overview.html" class="sidebar-item"><i class="fa-solid fa-border-all"></i> Overview</a>
+                    </li>
+                    <li><a href="trucks.html" class="sidebar-item active"><i class="fa-solid fa-truck"></i> Truck
+                            Management</a></li>
+                    <li><a href="gps.html" class="sidebar-item"><i class="fa-solid fa-location-dot"></i> GPS
+                            Tracking</a></li>
+                    <li><a href="analytics.html" class="sidebar-item"><i class="fa-solid fa-chart-line"></i>
+                            Analytics</a></li>
+                </ul>
+                <ul class="sidebar-menu sidebar-footer">
+                    <li><a href="index.html" class="sidebar-item logout-link"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                </ul>
+            </nav>
+            
+            
+            
+
+            <main class="dashboard-main">
+                <div class="dashboard-header"
+                    style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h1>Truck Manage</h1>
+                        <p>Manage your fleet</p>
+                    </div>
+                    <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Add Truck</button>
+                </div>
+
+                <div class="dash-card">
+                    <div style="display: flex; gap: 16px; margin-bottom: 24px;">
+                        <input type="text" placeholder="Search trucks..." style="max-width: 300px;">
+                        <select style="padding: 12px; border-radius: 8px; border: 1px solid var(--border-color);">
+                            <option>All Status</option>
+                            <option>Active</option>
+                            <option>Inactive</option>
+                            <option>Maintenance</option>
+                        </select>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Truck Name</th>
+                                    <th>Status</th>
+                                    <th>Location</th>
+                                    <th>Cuisine</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="status-active">
+                                    <td>The Burger Bus</td>
+                                    <td><span class="status-dot"></span> Active</td>
+                                    <td>Downtown Square</td>
+                                    <td>American</td>
+
+                                </tr>
+                                <tr class="status-active">
+                                    <td>Taco Wheels</td>
+                                    <td><span class="status-dot"></span> Active</td>
+                                    <td>City Park</td>
+                                    <td>Mexican</td>
+
+                                    </td>
+                                </tr>
+                                <tr class="status-maintenance">
+                                    <td>Sweet Freeze</td>
+                                    <td><span class="status-dot"></span> Maintenance</td>
+                                    <td>Service Center</td>
+                                    <td>Desserts</td>
+
+                                    </td>
+                                </tr>
+                                <tr class="status-inactive">
+                                    <td>Thai Mobile</td>
+                                    <td><span class="status-dot"></span> Inactive</td>
+                                    <td>Main Warehouse</td>
+                                    <td>Thai</td>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="js/rtl-toggle.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
+
