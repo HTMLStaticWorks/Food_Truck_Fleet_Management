@@ -52,4 +52,46 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = 'index.html';
     });
   }
+
+  // Back to Top functionality
+  const createBackToTop = () => {
+    // Exclude if dashboard layout or auth page is detected
+    if (document.querySelector('.dashboard-layout') || document.querySelector('.auth-page')) {
+      return;
+    }
+
+    const backToTopBtn = document.createElement('button');
+    backToTopBtn.className = 'back-to-top';
+    backToTopBtn.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
+    backToTopBtn.setAttribute('aria-label', 'Back to Top');
+    document.body.appendChild(backToTopBtn);
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('active');
+      } else {
+        backToTopBtn.classList.remove('active');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  };
+
+  // Active Page Highlighting
+  const currentLocation = window.location.pathname.split('/').pop() || 'index.html';
+  const allNavLinks = document.querySelectorAll('.nav-link, .sidebar-item');
+
+  allNavLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentLocation) {
+      link.classList.add('active');
+    }
+  });
+
+  createBackToTop();
 });

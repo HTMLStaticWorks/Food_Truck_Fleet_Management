@@ -202,8 +202,19 @@ a {
   position: relative;
 }
 
-.nav-link:hover {
+.nav-link.active {
   color: var(--primary);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary);
+  border-radius: 2px;
 }
 
 .nav-controls {
@@ -627,4 +638,49 @@ textarea:focus {
     max-width: 100%;
     grid-column: auto;
   }
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary);
+  color: #FFF;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 1001;
+  transform: translateY(20px);
+}
+
+.back-to-top.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background-color: var(--secondary);
+  transform: scale(1.1) translateY(-5px);
+}
+
+[data-theme="dark"] .back-to-top:hover {
+  background-color: var(--primary);
+  filter: brightness(1.2);
+}
+
+[dir="rtl"] .back-to-top {
+  right: auto;
+  left: 30px;
 }
