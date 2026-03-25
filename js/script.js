@@ -43,25 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Dashboard Access Control
-  const isDashboardPage = document.querySelector('.dashboard-layout') !== null;
-  const isLoggedIn = localStorage.getItem('user-logged-in') === 'true';
-
-  if (isDashboardPage && !isLoggedIn) {
-    window.location.href = 'login.html';
-  }
-
-  // Navbar dashboard links handling (prevent access if not logged in)
-  const dashboardLinks = document.querySelectorAll('.dashboard-link');
-  dashboardLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      if (!isLoggedIn) {
-        e.preventDefault();
-        showLoginPrompt();
-      }
-    });
-  });
-
   // Logout Logic
   const logoutBtn = document.querySelector('.logout-link');
   if (logoutBtn) {
@@ -70,27 +51,5 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.removeItem('user-logged-in');
       window.location.href = 'index.html';
     });
-  }
-
-  // Login Prompt Modal
-  function showLoginPrompt() {
-    let modal = document.getElementById('login-prompt-modal');
-    if (!modal) {
-      modal = document.createElement('div');
-      modal.id = 'login-prompt-modal';
-      modal.className = 'modal active';
-      modal.innerHTML = `
-        <div class="modal-content">
-          <h3>Access Restricted</h3>
-          <p style="margin: 16px 0;">Please login to access the dashboard</p>
-          <a href="/login.html" class="btn btn-primary btn-full" onclick="event.stopPropagation()">Login Now</a>
-          <button class="btn btn-outline btn-full" style="margin-top: 12px;" onclick="document.getElementById('login-prompt-modal').classList.remove('active')">Cancel</button>
-        </div>
-      `;
-      modal.querySelector('a').href = 'login.html';
-      document.body.appendChild(modal);
-    } else {
-      modal.classList.add('active');
-    }
   }
 });
