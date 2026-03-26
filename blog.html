@@ -121,6 +121,23 @@
             .blog-grid {
                 grid-template-columns: 1fr;
             }
+
+            .hero {
+                height: auto !important;
+                min-height: 50vh;
+                padding-top: 140px !important;
+                padding-bottom: 60px !important;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem !important;
+                margin-bottom: 16px !important;
+            }
+
+            .hero p {
+                font-size: 1rem !important;
+                padding: 0 20px;
+            }
         }
     </style>
 </head>
@@ -283,6 +300,100 @@
             </div>
         </div>
     </section>
+    <!-- FAQ Section -->
+    <section style="background: var(--accent);">
+        <div class="container">
+            <h2 class="section-heading">Frequently Asked Questions</h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <!-- FAQ 1 -->
+                <div class="faq-item"
+                    style="background: var(--bg-card); border-radius: 12px; margin-bottom: 16px; border: 1px solid var(--border-color); overflow: hidden;">
+                    <button class="faq-question"
+                        style="width: 100%; padding: 20px 24px; text-align: left; background: transparent; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; font-weight: 600; color: var(--text-dark);">
+                        <span>How can I book a TruckBite food truck for my event?</span>
+                        <i class="fa-solid fa-chevron-down"
+                            style="transition: transform 0.3s ease; color: var(--primary);"></i>
+                    </button>
+                    <div class="faq-answer"
+                        style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease;">
+                        <div style="padding: 0 24px 20px 24px;">
+                            <p style="color: var(--text-light); line-height: 1.6;">Simply visit our Services page and
+                                fill out the booking form, or contact us directly via email at hello@truckbite.com or
+                                call +1 (555) TRUCK-BITE. We'll work with you to customize the perfect menu and schedule
+                                for your event, whether it's a wedding, corporate gathering, or private party.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item"
+                    style="background: var(--bg-card); border-radius: 12px; margin-bottom: 16px; border: 1px solid var(--border-color); overflow: hidden;">
+                    <button class="faq-question"
+                        style="width: 100%; padding: 20px 24px; text-align: left; background: transparent; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; font-weight: 600; color: var(--text-dark);">
+                        <span>How do I track food trucks in real-time?</span>
+                        <i class="fa-solid fa-chevron-down"
+                            style="transition: transform 0.3s ease; color: var(--primary);"></i>
+                    </button>
+                    <div class="faq-answer"
+                        style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease;">
+                        <div style="padding: 0 24px 20px 24px;">
+                            <p style="color: var(--text-light); line-height: 1.6;">Visit our homepage and check the Live
+                                Truck Locations map to see where our fleet is currently operating. You can also download
+                                our mobile app (coming soon) to get real-time notifications when a truck is near your
+                                location. Each truck updates its position throughout the day.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item"
+                    style="background: var(--bg-card); border-radius: 12px; margin-bottom: 16px; border: 1px solid var(--border-color); overflow: hidden;">
+                    <button class="faq-question"
+                        style="width: 100%; padding: 20px 24px; text-align: left; background: transparent; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; font-weight: 600; color: var(--text-dark);">
+                        <span>What types of cuisine do you offer?</span>
+                        <i class="fa-solid fa-chevron-down"
+                            style="transition: transform 0.3s ease; color: var(--primary);"></i>
+                    </button>
+                    <div class="faq-answer"
+                        style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease;">
+                        <div style="padding: 0 24px 20px 24px;">
+                            <p style="color: var(--text-light); line-height: 1.6;">Our diverse fleet includes American
+                                gourmet burgers, Mexican street tacos, Thai cuisine, artisanal pizzas, fresh desserts,
+                                and more! Each truck specializes in a specific cuisine type, ensuring authentic flavors
+                                and quality. Check out our Fleet page to see all available options and their current
+                                menus.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const answer = faqItem.querySelector('.faq-answer');
+                const icon = button.querySelector('i');
+                const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+
+                // Close all other FAQs
+                document.querySelectorAll('.faq-answer').forEach(item => {
+                    item.style.maxHeight = '0';
+                });
+                document.querySelectorAll('.faq-question i').forEach(i => {
+                    i.style.transform = 'rotate(0deg)';
+                });
+
+                // Toggle current FAQ
+                if (!isOpen) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+    </script>
 
     <footer>
         <div class="container">
@@ -303,8 +414,8 @@
                 </div>
                 <div class="footer-col">
                     <h4>Follow Us</h4>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i> Linkedin</a>
                     <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
                     <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
                 </div>
                 <div class="footer-col">

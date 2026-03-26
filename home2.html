@@ -86,7 +86,8 @@
 <body>
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo"><img src="assets/images/logo.svg" alt="TruckBite" style="height: 36px;"></a>
+            <a href="index.html" class="logo"><img src="assets/images/logo.svg" alt="TruckBite"
+                    style="height: 36px;"></a>
             <ul class="nav-links">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="home2.html" class="nav-link">Home 2</a></li>
@@ -122,11 +123,13 @@
     </div>
 
 
-    <section style="display: flex; align-items: center; background: var(--bg-color); padding: 100px 0 80px;">
+    <section class="home2-hero-section"
+        style="display: flex; align-items: center; background: var(--bg-color); padding: 80px 0 0; box-sizing: border-box;">
         <div class="container">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
                 <!-- Left Content -->
-                <div style="animation: slideUp 1s ease-out 0.3s both;">
+                <div
+                    style="animation: slideUp 1s ease-out 0.3s both; display: flex; flex-direction: column; align-items: center; text-align: center;">
                     <div
                         style="display: inline-block; background: var(--primary); color: #FFF; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 24px;">
                         🚚 Fleet Management 2.0</div>
@@ -136,7 +139,7 @@
                     <p style="font-size: 1.2rem; color: var(--text-light); margin-bottom: 32px; line-height: 1.8;">
                         Experience the future of street food with real-time tracking and premium catering services
                         designed for the modern lifestyle.</p>
-                    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                    <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
                         <a href="#featured" class="btn btn-primary" style="padding: 16px 32px;">Explore Fleet</a>
                         <a href="services.html" class="btn btn-outline" style="padding: 16px 32px;">Learn More</a>
                     </div>
@@ -167,8 +170,9 @@
                 <div style="position: relative; animation: slideUp 1s ease-out 0.5s both;">
                     <div
                         style="position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
-                        <img src="https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?auto=format&fit=crop&q=80&w=1200"
-                            alt="Food Truck" style="width: 100%; height: 600px; object-fit: cover;">
+                        <img class="home2-hero-img"
+                            src="https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?auto=format&fit=crop&q=80&w=1200"
+                            alt="Food Truck" style="width: 100%; object-fit: cover;">
                         <!-- Overlay Badge -->
                         <div
                             style="position: absolute; bottom: 24px; left: 24px; background: rgba(255,255,255,0.95); padding: 20px 24px; border-radius: 16px; backdrop-filter: blur(10px);">
@@ -181,27 +185,55 @@
         </div>
 
         <style>
+            .home2-hero-section {
+                height: 100vh;
+                overflow: hidden;
+            }
+
+            .home2-hero-img {
+                height: calc(100vh - 200px);
+                max-height: 600px;
+                min-height: 350px;
+            }
+
+            @media (min-width: 969px) and (max-width: 1024px) {
+                .home2-hero-section {
+                    height: auto;
+                    min-height: auto;
+                    padding-top: 160px !important;
+                    padding-bottom: 120px !important;
+                }
+            }
+
             @media (max-width: 968px) {
-                section>div>div {
+                .home2-hero-section {
+                    height: auto;
+                    min-height: 100vh;
+                    overflow: visible;
+                    padding-top: 120px !important;
+                    padding-bottom: 60px !important;
+                }
+
+                .home2-hero-section>div>div {
                     grid-template-columns: 1fr !important;
                     text-align: center;
                 }
 
-                section>div>div>div:first-child {
+                .home2-hero-section>div>div>div:first-child {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                 }
 
-                section>div>div>div:first-child>div[style*="display: flex"] {
+                .home2-hero-section>div>div>div:first-child>div[style*="display: flex"] {
                     justify-content: center;
                 }
 
-                section>div>div>div:last-child {
-                    order: -1;
+                .home2-hero-section>div>div>div:last-child {
+                    order: 1;
                 }
 
-                section>div>div>div:last-child>div>img {
+                .home2-hero-img {
                     height: 400px !important;
                 }
             }
@@ -359,8 +391,8 @@
                 </div>
                 <div class="footer-col">
                     <h4>Follow Us</h4>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i> Linkedin</a>
                     <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
                     <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
                 </div>
                 <div class="footer-col">
