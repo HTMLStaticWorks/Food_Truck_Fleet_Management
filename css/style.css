@@ -35,6 +35,7 @@
   --text-light: #9CA3AF;
   --bg-card: #2A2D34;
   --border-color: #3E4149;
+  --accent: #111418;
   --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.3);
 }
 
@@ -74,13 +75,26 @@ h6 {
 h2.section-heading {
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 16px;
+}
+
+.section-subheading {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 48px;
+  color: var(--text-light);
+  font-size: 1.1rem;
 }
 
 @media (max-width: 768px) {
   h2.section-heading {
     font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+  .section-subheading {
     margin-bottom: 32px;
+    font-size: 1rem;
+    padding: 0 20px;
   }
 }
 
