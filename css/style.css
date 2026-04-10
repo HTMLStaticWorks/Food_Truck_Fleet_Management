@@ -50,6 +50,7 @@ body {
   color: var(--text-dark);
   background-color: var(--bg-color);
   line-height: 1.6;
+  font-weight: 400; /* Regular weight */
   transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
 }
@@ -68,8 +69,13 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
+  font-weight: 600;
   color: var(--text-dark);
   line-height: 1.2;
+}
+
+p {
+  font-weight: 400;
 }
 
 h2.section-heading {
