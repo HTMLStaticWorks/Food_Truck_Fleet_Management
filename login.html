@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,26 +10,35 @@
     <link rel="stylesheet" href="css/auth.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <div class="auth-page">
-        <div class="auth-card">
-            <!-- Auth Specific Top Controls -->
-            <div class="auth-top-controls">
-                <button class="icon-btn rtl-toggle-btn" aria-label="Toggle RTL"><i class="fa-solid fa-globe"></i></button>
-                <button class="icon-btn theme-toggle-btn" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
-            </div>
+        <!-- Auth Specific Top Controls -->
+        <div class="auth-top-controls">
+            <button class="icon-btn rtl-toggle-btn" aria-label="Toggle RTL"><i
+                    class="fa-solid fa-language"></i></button>
+            <button class="icon-btn theme-toggle-btn" aria-label="Toggle Theme"><i
+                    class="fa-solid fa-moon"></i></button>
+        </div>
 
+        <div class="auth-card">
             <div class="auth-logo">
                 <a href="index.html" style="text-decoration: none;">
                     <img src="assets/images/logo.svg" alt="TruckBite" style="height: 36px;">
                 </a>
             </div>
 
+            <div class="auth-header" style="text-align: center; margin-bottom: 32px;">
+                <h4 style="font-size: 2rem; color: var(--text-dark);">Welcome Back</h4>
+                <p style="color: var(--text-light); margin-top: 8px;">Log in to manage your fleet</p>
+            </div>
+
             <form id="login-form">
                 <div class="form-group">
                     <label>Email Address</label>
                     <div style="position: relative;">
-                        <i class="fa-regular fa-envelope" style="position: absolute; left: 16px; top: 16px; color: var(--text-light);"></i>
+                        <i class="fa-regular fa-envelope"
+                            style="position: absolute; left: 16px; top: 16px; color: var(--text-light);"></i>
                         <input type="email" placeholder="Enter your email" required style="padding-left: 44px;">
                     </div>
                 </div>
@@ -36,7 +46,8 @@
                 <div class="form-group" style="margin-bottom: 12px;">
                     <label>Password</label>
                     <div style="position: relative;">
-                        <i class="fa-solid fa-lock" style="position: absolute; left: 16px; top: 16px; color: var(--text-light);"></i>
+                        <i class="fa-solid fa-lock"
+                            style="position: absolute; left: 16px; top: 16px; color: var(--text-light);"></i>
                         <input type="password" placeholder="Enter your password" required style="padding-left: 44px;">
                     </div>
                 </div>
@@ -44,9 +55,11 @@
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
                     <div class="checkbox-group" style="margin-bottom: 0; display: flex; align-items: center; gap: 8px;">
                         <input type="checkbox" id="remember" style="width: auto;">
-                        <label for="remember" style="font-size: 0.85rem; cursor: pointer; margin-bottom: 0;">Remember me</label>
+                        <label for="remember" style="font-size: 0.85rem; cursor: pointer; margin-bottom: 0;">Remember
+                            me</label>
                     </div>
-                    <a href="#" class="forgot-password" style="margin: 0; font-size: 0.85rem; color: var(--primary);">Forgot Password?</a>
+                    <a href="#" class="forgot-password"
+                        style="margin: 0; font-size: 0.85rem; color: var(--primary);">Forgot Password?</a>
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-full">Login</button>
@@ -55,10 +68,16 @@
             <div class="auth-divider">OR</div>
 
             <button class="social-btn btn-google">
-                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" style="width: 18px;">
+                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google"
+                    style="width: 18px;">
                 Continue with Google
             </button>
-            
+
+            <button class="social-btn btn-apple">
+                <i class="fa-brands fa-apple" style="font-size: 20px;"></i>
+                Continue with Apple
+            </button>
+
             <button class="social-btn btn-email">
                 <i class="fa-regular fa-envelope" style="font-size: 20px;"></i>
                 Continue with Email
@@ -73,5 +92,5 @@
     <script src="js/rtl-toggle.js"></script>
     <script src="js/auth.js"></script>
 </body>
-</html>
 
+</html>

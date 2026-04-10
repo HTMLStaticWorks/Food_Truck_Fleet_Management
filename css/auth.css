@@ -7,6 +7,7 @@
   min-height: 100vh;
   background-color: var(--bg-color);
   padding: 24px;
+  position: relative;
 }
 
 .auth-card {
@@ -22,16 +23,16 @@
 
 .auth-top-controls {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 24px;
+  right: 24px;
   display: flex;
   gap: 8px;
+  z-index: 100;
 }
 
 [dir="rtl"] .auth-top-controls {
   right: auto;
-  left: 16px;
-  flex-direction: row-reverse;
+  left: 24px;
 }
 
 .auth-logo {
@@ -137,6 +138,27 @@
   border-color: #DB4437;
 }
 
+.btn-apple {
+  background: #000;
+  color: #FFF;
+  border-color: #000;
+}
+
+.btn-apple:hover {
+  background: #333;
+}
+
+[data-theme="dark"] .btn-apple {
+  background: #FFF;
+  color: #000;
+  border-color: #FFF;
+}
+
+[data-theme="dark"] .btn-apple:hover {
+  background: #E5E7EB;
+}
+
+
 .btn-email {
   background: #F9FAFB;
   color: #6B7280;
@@ -149,6 +171,14 @@
   box-shadow: var(--shadow-sm);
   transform: translateY(-2px);
 }
+
+.social-btn.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+  filter: grayscale(1);
+}
+
 
 .auth-links {
   text-align: center;

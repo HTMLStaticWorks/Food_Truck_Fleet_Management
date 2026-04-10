@@ -15,29 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (registerForm) {
     const termsCheck = document.getElementById('terms');
-    const registerBtn = document.getElementById('register-btn');
-
-    termsCheck.addEventListener('change', (e) => {
-      registerBtn.disabled = !e.target.checked;
-      if (e.target.checked) {
-        registerBtn.style.opacity = '1';
-        registerBtn.style.cursor = 'pointer';
-      } else {
-        registerBtn.style.opacity = '0.5';
-        registerBtn.style.cursor = 'not-allowed';
-      }
-    });
 
     registerForm.addEventListener('submit', (e) => {
       e.preventDefault();
+      // Browser validation (required attribute) will handle the checkbox
+      // but we add a check here too for safety
       if (termsCheck.checked) {
         window.location.href = 'overview.html';
       }
     });
-
-    // initial state
-    registerBtn.disabled = !termsCheck.checked;
-    registerBtn.style.opacity = termsCheck.checked ? '1' : '0.5';
   }
 });
 
