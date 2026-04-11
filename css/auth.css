@@ -160,16 +160,17 @@
 
 
 .btn-email {
-  background: #F9FAFB;
-  color: #6B7280;
+  color: #1A1D23;
 }
+
 [data-theme="dark"] .btn-email {
-  background: #2A2D34;
-  color: #9CA3AF;
+  color: #FFF;
 }
+
 .btn-email:hover {
-  box-shadow: var(--shadow-sm);
-  transform: translateY(-2px);
+  background: var(--primary);
+  color: #FFF;
+  border-color: var(--primary);
 }
 
 .social-btn.disabled {
